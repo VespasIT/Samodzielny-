@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//tmp/**)",
+      "Bash(jobs -l)",
+      "Bash(npm install 2>&1 | tail -5)",
+      "Bash(git config --global user.email \"dev@example.com\" && git config --global user.name \"Developer\")"
+    ]
+  }
+}

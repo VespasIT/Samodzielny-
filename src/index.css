@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Merriweather:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 210 65% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 175 45% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 18% 87%;
+    --input: 210 18% 87%;
+    --ring: 210 65% 22%;
+
+    --radius: 0.5rem;
+
+    --topbar-bg: 210 65% 18%;
+    --topbar-fg: 210 20% 92%;
+    --hero-overlay: 210 65% 22%;
+    --tile-hover: 175 45% 35%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+  }
+}
+
+@layer utilities {
+  .topbar-bg {
+    background-color: hsl(var(--topbar-bg));
+  }
+  .topbar-fg {
+    color: hsl(var(--topbar-fg));
+  }
+  .hero-overlay {
+    background-color: hsl(var(--hero-overlay) / 0.75);
+  }
+  .tile-hover:hover {
+    background-color: hsl(var(--tile-hover));
+  }
+  .section-heading {
+    @apply text-2xl md:text-3xl font-bold mb-6;
+    color: hsl(var(--primary));
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: hsl(var(--secondary));
+    border-radius: 2px;
+  }
+}
